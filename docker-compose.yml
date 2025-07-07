@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  imdb-trainer:
+    build: .
+    volumes:
+      - ./artifacts:/app/artifacts
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: python src/train.py
