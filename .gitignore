@@ -1,0 +1,16 @@
+__pycache__
+*.pyc
+*.log
+*.env
+*.pth
+*.pt
+*.bin
+data/
+venv/
+env/
+artifacts/
+*.md5
+*.tar.gz
+*.zip
+.DS_Store
+.ipynb_checkpoints
