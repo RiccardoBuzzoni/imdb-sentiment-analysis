@@ -1,10 +1,14 @@
-import torch
+# src/utils.py
 import os
+import torch
+from transformers import PreTrainedModel, PreTrainedTokenizer
 
-def save_model(model, path="artifacts/model"):
+def save_model(model: PreTrainedModel, tokenizer=None, path="artifacts/model"):
     os.makedirs(path, exist_ok=True)
     model.save_pretrained(path)
-    print(f"Model saved to {path}")
+    if tokenizer is not None:
+        tokenizer.save_pretrained(path)
+    print(f"Model and tokenizer saved to {path}")
 
 def load_model(path="artifacts/model"):
     from transformers import AutoModelForSequenceClassification

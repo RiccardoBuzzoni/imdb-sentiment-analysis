@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from src.model import get_model, get_tokenizer
 from src.utils import save_model
 import pandas as pd
+import os
 
 def preprocess_dataset(ds, tokenizer, max_length=512):
     def tokenize_function(examples):
@@ -36,7 +37,7 @@ def main():
     # Training
     training_args = TrainingArguments(
         output_dir="artifacts/training_output",
-        evaluation_strategy="epoch",
+        eval_strategy="epoch",
         learning_rate=2e-5,
         per_device_train_batch_size=4,
         num_train_epochs=2,
@@ -53,7 +54,7 @@ def main():
     )
 
     trainer.train()
-    save_model(model)
+    save_model(model, tokenizer=tokenizer)
 
 if __name__ == "__main__":
     main()
