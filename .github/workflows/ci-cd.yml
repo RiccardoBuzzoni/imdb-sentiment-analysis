@@ -54,11 +54,9 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          push: ${{ github.event_name == 'push' }}
+          push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/imdb-sentiment-analyzer:latest
-          outputs: |
-            type=dockerimage,name=imdb-sentiment-analyzer
+            ${{ secrets.DOCKER_USERNAME }}/imdb-sentiment-analysis:latest
 
   artifacts:
     needs: docker-build
