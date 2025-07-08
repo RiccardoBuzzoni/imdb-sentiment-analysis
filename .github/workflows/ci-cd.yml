@@ -27,7 +27,7 @@ jobs:
 
       - name: Run linter
         run: |
-          flake8 src/**/*.py
+          flake8 src/
 
       - name: Run unit tests
         run: |
