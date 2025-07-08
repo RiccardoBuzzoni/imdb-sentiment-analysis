@@ -1,6 +1,7 @@
 from src.utils import load_model
 import os
 
+
 def test_model_loading():
     # Verifica che il modello possa essere caricato correttamente
     if not os.path.exists("artifacts/model"):
