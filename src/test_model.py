@@ -1,15 +1,14 @@
-from src.utils import load_model
 import os
-
+import pytest
+from src.utils import load_model
 
 def test_model_loading():
     # Verifica che il modello possa essere caricato correttamente
     if not os.path.exists("artifacts/model"):
-        print("Modello non presente. Salvalo prima con train.py")
-        assert False
+        pytest.skip("Modello non trovato: esegui prima 'python -m src.train'")
+    
     try:
         model = load_model()
         assert model is not None
     except Exception as e:
-        print(f"Errore durante il caricamento del modello: {e}")
-        assert False
+        assert False, f"Errore durante il caricamento del modello: {e}"
