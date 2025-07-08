@@ -51,7 +51,6 @@
     Linting: flake8
     Testing: pytest
     EDA: Pandas, Seaborn, Matplotlib, WordCloud
-    Hosting Docker: Docker Hub (opzionale)
 
 # EDA (Analisi Esplorativa)
     Il notebook notebooks/eda.ipynb contiene l’analisi esplorativa del dataset IMDb, tra cui:
@@ -61,25 +60,23 @@
         - Visualizzazione tramite word cloud e grafici
 
 # Dockerizzazione
-    Il progetto è completamente containerizzato e permette di:
-        - Addestrare il modello all’interno di un container Docker
-        - Salvare i risultati nell’host usando volumi
-        - Eseguire test e build isolati
-    
+    Il progetto è completamente containerizzato.
+
     Comandi principali:
         # Build dell'immagine Docker
-        docker build -t imdb-sentiment-analyzer .
+        docker build -t imdb-sentiment-analysis .
 
         # Esecuzione del training in Docker
-        docker run --rm -v $(pwd)/artifacts:/app/artifacts imdb-sentiment-analyzer
+        docker run --rm -v $(pwd)/artifacts:/app/artifacts imdb-sentiment-analysis python src/train.py
+
+        # Esecuzione del modello addestrato
+        docker run --rm -v $(pwd)/artifacts:/app/artifacts imdb-sentiment-analysis python src/evaluate.py
 
 # CI/CD con GitHub Actions
     Il file .github/workflows/ci-cd.yml implementa un workflow automatizzato che:
         1. Esegue il linting del codice (flake8)
         2. Avvia i test unitari (pytest)
         3. Builda l’immagine Docker
-        4. Salva il modello come artefatto (opzionale)
-        5. Pussha su Docker Hub (opzionale)
 
 # Come usare il progetto
     1. Clona il repository
