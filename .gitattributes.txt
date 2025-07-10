@@ -1,0 +1,2 @@
+*.ipynb filter=lfs diff=nodiff linguist-datatype=data
+notebooks/*.ipynb filter=lfs diff=nodiff linguist-datatype=data
