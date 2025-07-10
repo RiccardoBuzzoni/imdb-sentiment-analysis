@@ -5,6 +5,7 @@
     imdb-sentiment-analyzer/
     ├── README.md
     ├── .gitignore
+    ├── .gitattributes
     ├── requirements.txt
     ├── setup.py
     ├── Dockerfile              # Definizione dell’immagine Docker

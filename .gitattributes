@@ -1,0 +1,3 @@
+# Tratta tutti i notebook Jupyter come dati, non come codice sorgente
+*.ipynb filter=lfs diff=nodiff linguist-datatype=data
+notebooks/*.ipynb filter=lfs diff=nodiff linguist-datatype=data
