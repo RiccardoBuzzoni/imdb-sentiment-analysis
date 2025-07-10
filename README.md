@@ -22,7 +22,7 @@
             └── ci-cd.yml
 
 # Obbiettivo del progetto
-    - Analizzare le recensioni del dataset IMDb
+    - Analizzare le recensioni del dataset IMDb Movie Reviews
     - Addestrare un modello di classificazione basato su BERT Tiny
     - Eseguire una valutazione accurata del modello
     - Containerizzare l’applicazione con Docker
@@ -59,6 +59,8 @@
         - Parole più frequenti
         - Visualizzazione tramite word cloud e grafici
 
+    Il file CSV `artifacts/imdb_sample.csv` viene generato automaticamente durante il training e può essere usato per l’EDA.
+
 # Dockerizzazione
     Il progetto è completamente containerizzato.
 
@@ -80,7 +82,7 @@
 
 # Come usare il progetto
     1. Clona il repository
-        git clone https://github.com/ <username>/imdb-sentiment-analyzer.git
+        git clone https://github.com/ riccardobuzzoni/imdb-sentiment-analyzer.git
         cd imdb-sentiment-analyzer
 
     2. Crea un ambiente virtuale
