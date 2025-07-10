@@ -82,7 +82,7 @@
 
 # Come usare il progetto
     1. Clona il repository
-        git clone https://github.com/ riccardobuzzoni/imdb-sentiment-analyzer.git
+        git clone https://github.com/ riccardobuzzoni/imdb-sentiment-analysis.git
         cd imdb-sentiment-analyzer
 
     2. Crea un ambiente virtuale
